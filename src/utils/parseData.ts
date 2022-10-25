@@ -8,8 +8,8 @@ import {
 
 import { YOUTUBE_API_URL } from "./constants";
 
-const API_KEY = process.env.REACT_APP_YOTUBE_DATA_API_KEY;
-//const API_KEY="AIzaSyDz09YmOeU30nGdYReXQHq-ymTKWnqBZWI";
+//const API_KEY = process.env.REACT_APP_YOTUBE_DATA_API_KEY;
+const API_KEY="AIzaSyDz09YmOeU30nGdYReXQHq-ymTKWnqBZWI";
 
 export const parseData = async (items: any[]) => {
   try {

@@ -19,9 +19,8 @@ const YoutubeSlice=createSlice({
     reducers:{},
     extraReducers:(buider=>{
     buider.addCase(getHomePageVideos.fulfilled,(state,action)=>{
-        //state.videos=action.payload.parseData;
-        //state.nextPageToken=action.payload.nextPageToken;
-
+        state.videos=action.payload.parseData;
+        state.nextPageToken=action.payload.nextPageToken;
     })
     }),
 });
