@@ -8,12 +8,12 @@ import { parseData } from '../../utils';
 
 const API_KEY="AIzaSyDz09YmOeU30nGdYReXQHq-ymTKWnqBZWI";
 
-export const getHomePageVideos=createAsyncThunk("youtubeApp/homePageVideos",async(isNext:boolean,{getState})=>{
+export const getSearchPageVideos=createAsyncThunk("youtubeApp/searchPageVideos",async(isNext:boolean,{getState})=>{
     const{
-        youtubeApp:{nextPageToken:nextPageTokenFromState,videos},
+        youtubeApp:{nextPageToken:nextPageTokenFromState,videos,searchTerm},
     }=getState() as RootState;
 
-    const {data:{items,nextPageToken}}=await axios.get(`${YOUTUBE_API_URL}/search?maxResults=20&q="reactjs projects"&key=${API_KEY}&part=snippet&type=video&${
+    const {data:{items,nextPageToken}}=await axios.get(`${YOUTUBE_API_URL}/search?q=${searchTerm}&key=${API_KEY}&part=snippet&type=video&${
         isNext ? `pageToken=${nextPageTokenFromState}` : ""
       }`);
         //console.log(items);
